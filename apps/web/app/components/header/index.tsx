@@ -16,7 +16,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 import Image from "next/image";
-import Logo from "@/public/favicon.png";
+//@ts-ignore
+import Logo from "@/public/blogfavicon.png";
 
 export const Header = () => {
   const navigationItems = [
