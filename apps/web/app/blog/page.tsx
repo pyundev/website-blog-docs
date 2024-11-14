@@ -1,21 +1,21 @@
-import { cn } from '@repo/design-system/lib/utils';
-import type { Blog, WithContext } from '@repo/seo/json-ld';
-import { JsonLd } from '@repo/seo/json-ld';
-import { createMetadata } from '@repo/seo/metadata';
-import { allPosts } from 'content-collections';
-import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
+import { cn } from "@repo/design-system/lib/utils";
+import type { Blog, WithContext } from "@repo/seo/json-ld";
+import { JsonLd } from "@repo/seo/json-ld";
+import { createMetadata } from "@repo/seo/metadata";
+import { allPosts } from "content-collections";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
-const title = 'Blog';
-const description = 'Thoughts, ideas, and opinions.';
+const title = "Blog";
+const description = "Thoughts, ideas, and opinions.";
 
 export const metadata: Metadata = createMetadata({ title, description });
 
 const BlogIndex = () => {
   const jsonLd: WithContext<Blog> = {
-    '@type': 'Blog',
-    '@context': 'https://schema.org',
+    "@type": "Blog",
+    "@context": "https://schema.org",
   };
 
   return (
@@ -33,8 +33,8 @@ const BlogIndex = () => {
               <Link
                 href={`/blog/${post._meta.path}`}
                 className={cn(
-                  'flex cursor-pointer flex-col gap-4 hover:opacity-75',
-                  !index && 'md:col-span-2'
+                  "flex cursor-pointer flex-col gap-4 hover:opacity-75",
+                  !index && "md:col-span-2"
                 )}
                 key={post.title}
               >
@@ -48,10 +48,10 @@ const BlogIndex = () => {
                 />
                 <div className="flex flex-row items-center gap-4">
                   <p className="text-muted-foreground text-sm">
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      month: 'long',
-                      day: 'numeric',
-                      year: 'numeric',
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
                     })}
                   </p>
                 </div>
