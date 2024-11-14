@@ -1,10 +1,10 @@
-import '@repo/design-system/styles/globals.css';
-import './styles/web.css';
-import { DesignSystemProvider } from '@repo/design-system';
-import { fonts } from '@repo/design-system/lib/fonts';
-import type { ReactNode } from 'react';
-import { Footer } from './components/footer';
-import { Header } from './components/header';
+import "@repo/design-system/styles/globals.css";
+import "./styles/web.css";
+import { DesignSystemProvider } from "@repo/design-system";
+import { fonts } from "@repo/design-system/lib/fonts";
+import type { ReactNode } from "react";
+import { Footer } from "./components/footer";
+import { Header } from "./components/header";
 
 type RootLayoutProperties = {
   readonly children: ReactNode;
