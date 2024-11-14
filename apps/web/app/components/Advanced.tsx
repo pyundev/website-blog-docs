@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Card,
   CardContent,
@@ -15,11 +15,11 @@ export default function Advanced() {
   return (
     <section className="relative bg-zinc-950 text-zinc-100">
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 to-zinc-900/50 pointer-events-none" />
-
+      
       <div className="container mx-auto px-4 py-12 sm:py-16 md:py-24 lg:py-28 space-y-8 sm:space-y-12 relative">
         {/* Hero Section */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 max-w-3xl mx-auto space-y-4 sm:space-y-6 px-2">
-          <h1 className="max-w-3xl text-center font-regular text-2xl tracking-tighter md:text-5xl bg-gradient-to-r from-primary text-white to-primary/80 bg-clip-text text-transparent">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
             The flexibility of not having an infrastructure to manage.
           </h1>
           <p className="text-base sm:text-lg text-zinc-400">
@@ -37,14 +37,11 @@ export default function Advanced() {
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
                   <Globe2 className="h-5 w-5 text-emerald-500" />
-                  <CardTitle className="text-zinc-100 text-lg sm:text-xl">
-                    99.99% Uptime
-                  </CardTitle>
+                  <CardTitle className="text-zinc-100 text-lg sm:text-xl">99.99% Uptime</CardTitle>
                 </div>
                 <CardDescription className="text-zinc-400 text-sm sm:text-base">
                   All pipelines run on isolated infrastructure, ensuring 99.99%
-                  uptime. Scale your data processing without infrastructure
-                  worries.
+                  uptime. Scale your data processing without infrastructure worries.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -62,12 +59,9 @@ export default function Advanced() {
             {/* Integrations Card */}
             <Card className="bg-zinc-900/50 border border-zinc-800 shadow-lg">
               <CardHeader className="pb-4">
-                <CardTitle className="text-zinc-100 text-lg sm:text-xl">
-                  Popular Integrations
-                </CardTitle>
+                <CardTitle className="text-zinc-100 text-lg sm:text-xl">Popular Integrations</CardTitle>
                 <CardDescription className="text-zinc-400 text-sm sm:text-base">
-                  Connect and automate your workflow with popular platforms. Set
-                  up in minutes, no code required.
+                  Connect and automate your workflow with popular platforms. Set up in minutes, no code required.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -76,18 +70,16 @@ export default function Advanced() {
                   <Card className="bg-zinc-800/50 border border-zinc-700 p-3 sm:p-4 hover:bg-zinc-800 transition-colors duration-200">
                     <div className="flex items-center gap-3 sm:gap-4">
                       <div className="shrink-0">
-                        <Image
-                          src={Slack}
-                          alt="Slack"
-                          width={32}
+                        <Image 
+                          src={Slack} 
+                          alt="Slack" 
+                          width={32} 
                           height={32}
                           className="object-contain sm:w-10 sm:h-10"
                         />
                       </div>
                       <div>
-                        <h3 className="font-medium text-zinc-100 text-sm sm:text-base mb-1">
-                          Slack
-                        </h3>
+                        <h3 className="font-medium text-zinc-100 text-sm sm:text-base mb-1">Slack</h3>
                         <p className="text-xs sm:text-sm text-zinc-400">
                           Get notifications in your channels
                         </p>
@@ -99,20 +91,18 @@ export default function Advanced() {
                   <Card className="bg-zinc-800/50 border border-zinc-700 p-3 sm:p-4 hover:bg-zinc-800 transition-colors duration-200">
                     <div className="flex items-center gap-3 sm:gap-4">
                       <div className="shrink-0">
-                        <Image
-                          src={Drive}
-                          alt="Google Drive"
-                          width={32}
+                        <Image 
+                          src={Drive} 
+                          alt="Google Drive" 
+                          width={32} 
                           height={32}
                           className="object-contain sm:w-10 sm:h-10"
                         />
                       </div>
                       <div>
-                        <h3 className="font-medium text-zinc-100 text-sm sm:text-base mb-1">
-                          Google Drive
-                        </h3>
+                        <h3 className="font-medium text-zinc-100 text-sm sm:text-base mb-1">Google Drive</h3>
                         <p className="text-xs sm:text-sm text-zinc-400">
-                          Export Docs, Sheets and other directly from your drive
+                          Auto-sync your data
                         </p>
                       </div>
                     </div>
@@ -127,9 +117,7 @@ export default function Advanced() {
             <CardHeader className="pb-4">
               <div className="flex items-center gap-2">
                 <Code className="h-5 w-5 text-emerald-500" />
-                <CardTitle className="text-zinc-100 text-lg sm:text-xl">
-                  Not just Python
-                </CardTitle>
+                <CardTitle className="text-zinc-100 text-lg sm:text-xl">Not just Python</CardTitle>
               </div>
               <CardDescription className="text-zinc-400 text-sm sm:text-base">
                 Write ETL pipelines in your preferred language.
@@ -165,8 +153,7 @@ export default function Advanced() {
                       {"        "}
                       <span className="text-emerald-300">
                         &apos;revenue&apos;
-                      </span>
-                      :{" "}
+                      </span>:{" "}
                       <span className="text-emerald-300">&apos;sum&apos;</span>
                       {"\n"}
                       {"    "}
@@ -194,10 +181,8 @@ export default function Advanced() {
                       <span className="text-blue-400">SELECT</span> date,
                       {"\n"}
                       {"    "}
-                      <span className="text-emerald-400">
-                        SUM
-                      </span>(revenue) <span className="text-blue-400">as</span>{" "}
-                      revenue,
+                      <span className="text-emerald-400">SUM</span>(revenue){" "}
+                      <span className="text-blue-400">as</span> revenue,
                       {"\n"}
                       {"    "}
                       <span className="text-emerald-400">COUNT</span>(*){" "}
@@ -209,7 +194,8 @@ export default function Advanced() {
                       {"  "}
                       <span className="text-blue-400">GROUP BY</span> date
                       {"\n"}){"\n"}
-                      <span className="text-blue-400">INSERT INTO</span> metrics
+                      <span className="text-blue-400">INSERT INTO</span>{" "}
+                      metrics
                       {"\n"}
                       <span className="text-blue-400">SELECT</span> *{" "}
                       <span className="text-blue-400">FROM</span> summary;
@@ -220,7 +206,8 @@ export default function Advanced() {
                 {/* R Card */}
                 <div className="rounded bg-zinc-900/80 p-3 sm:p-4 border border-zinc-800">
                   <div className="font-medium mb-2 text-emerald-500 flex items-center gap-2 text-sm sm:text-base">
-                    R<span className="text-xs text-zinc-500">ETL</span>
+                    R
+                    <span className="text-xs text-zinc-500">ETL</span>
                   </div>
                   <pre className="text-xs sm:text-sm overflow-x-auto">
                     <code className="block">
@@ -243,8 +230,9 @@ export default function Advanced() {
                       <span className="text-emerald-400">sum</span>(revenue)
                       {"\n"}
                       {"  "}){"\n\n"}
-                      <span className="text-blue-400">dbWriteTable</span>(conn,
-                      summary)
+                      <span className="text-blue-400">
+                        dbWriteTable
+                      </span>(conn, summary)
                     </code>
                   </pre>
                 </div>

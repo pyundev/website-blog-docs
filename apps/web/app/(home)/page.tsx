@@ -1,18 +1,18 @@
-import { showBetaFeature } from '@repo/feature-flags';
-import { createMetadata } from '@repo/seo/metadata';
-import type { Metadata } from 'next';
-import { Cases } from './components/cases';
-import { CTA } from './components/cta';
-import { FAQ } from './components/faq';
-import { Features } from './components/features';
-import { Hero } from './components/hero';
-import { Stats } from './components/stats';
-import { Testimonials } from './components/testimonials';
+import { showBetaFeature } from "@repo/feature-flags";
+import { createMetadata } from "@repo/seo/metadata";
+import type { Metadata } from "next";
+import CTA from "./components/cta";
+import { FAQ } from "./components/faq";
+import Features from "./components/features";
+import { Hero } from "./components/hero";
+import Stats from "./components/stats";
+// import { Testimonials } from "./components/testimonials";
+import Notebook from "./components/Notebook";
 
 const meta = {
-  title: 'From zero to production in minutes.',
+  title: "Datamizu - Serverless Data Workspace & AI-Powered Insights",
   description:
-    "next-forge is a production-grade boilerplate for modern Next.js apps. It's designed to have everything you need to build your new SaaS app as quick as possible. Authentication, billing, analytics, SEO, and more. It's all here.",
+    "Datamizu is a cutting-edge serverless data workspace for startups and enterprises, enabling effortless data management and visualization. Connect databases, merge data sources, and leverage AI-powered insights to unlock hidden value, enhance decision-making, and drive business growth—all in one secure, intuitive platform. Perfect for product analysis, customer insights, and collaborative reporting.",
 };
 
 export const metadata: Metadata = createMetadata(meta);
@@ -28,10 +28,10 @@ const Home = async () => {
         </div>
       )}
       <Hero />
-      <Cases />
       <Features />
       <Stats />
-      <Testimonials />
+      <Notebook />
+      {/* <Testimonials /> */}
       <FAQ />
       <CTA />
     </>

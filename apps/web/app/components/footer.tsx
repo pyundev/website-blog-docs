@@ -1,43 +1,45 @@
-import { env } from '@repo/env';
-import { Status } from '@repo/observability/status';
-import Link from 'next/link';
+import { env } from "@repo/env";
+import { Status } from "@repo/observability/status";
+import Link from "next/link";
+import Image from "next/image";
+import Logo from "@/public/blog/favicon.png";
 
 export const Footer = () => {
   const navigationItems = [
     {
-      title: 'Home',
-      href: '/',
-      description: '',
+      title: "Home",
+      href: "/",
+      description: "",
     },
     {
-      title: 'Pages',
-      description: 'Managing a small business today is already tough.',
+      title: "Pages",
+      description: "Managing a small business today is already tough.",
       items: [
         {
-          title: 'Blog',
-          href: '/blog',
+          title: "Blog",
+          href: "/blog",
         },
         {
-          title: 'Docs',
+          title: "Docs",
           href: env.NEXT_PUBLIC_DOCS_URL,
         },
       ],
     },
     {
-      title: 'Legal',
-      description: 'We stay on top of the latest legal requirements.',
+      title: "Legal",
+      description: "We stay on top of the latest legal requirements.",
       items: [
         {
-          title: 'Terms of Service',
-          href: '/legal/terms',
+          title: "Terms of Service",
+          href: "/legal/terms",
         },
         {
-          title: 'Privacy Policy',
-          href: '/legal/privacy',
+          title: "Privacy Policy",
+          href: "/legal/privacy",
         },
         {
-          title: 'Acceptable Use',
-          href: '/legal/acceptable-use',
+          title: "Acceptable Use",
+          href: "/legal/acceptable-use",
         },
       ],
     },
@@ -49,15 +51,18 @@ export const Footer = () => {
         <div className="container mx-auto">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className="flex flex-col items-start gap-8">
-              <div className="flex flex-col gap-2">
-                <h2 className="max-w-xl text-left font-regular text-3xl tracking-tighter md:text-5xl">
-                  next-forge
-                </h2>
-                <p className="max-w-lg text-left text-foreground/75 text-lg leading-relaxed tracking-tight">
-                  This is the start of something new.
-                </p>
+              <div className="flex items-center gap-4">
+                <Image src={Logo} alt="Datamizu Logo" width={70} height={50} />
+                <div className="flex flex-col gap-2">
+                  <h2 className="text-left font-regular text-3xl tracking-tighter md:text-5xl">
+                    Datamizu
+                  </h2>
+                  <p className="text-left text-foreground/75 text-lg leading-relaxed tracking-tight">
+                    Serverless Data Workspace
+                  </p>
+                </div>
               </div>
-              <Status />
+              {/* <Status /> */}
             </div>
             <div className="grid items-start gap-10 lg:grid-cols-3">
               {navigationItems.map((item) => (
@@ -71,11 +76,11 @@ export const Footer = () => {
                         href={item.href}
                         className="flex items-center justify-between"
                         target={
-                          item.href.includes('http') ? '_blank' : undefined
+                          item.href.includes("http") ? "_blank" : undefined
                         }
                         rel={
-                          item.href.includes('http')
-                            ? 'noopener noreferrer'
+                          item.href.includes("http")
+                            ? "noopener noreferrer"
                             : undefined
                         }
                       >
@@ -90,11 +95,11 @@ export const Footer = () => {
                         href={subItem.href}
                         className="flex items-center justify-between"
                         target={
-                          subItem.href.includes('http') ? '_blank' : undefined
+                          subItem.href.includes("http") ? "_blank" : undefined
                         }
                         rel={
-                          subItem.href.includes('http')
-                            ? 'noopener noreferrer'
+                          subItem.href.includes("http")
+                            ? "noopener noreferrer"
                             : undefined
                         }
                       >

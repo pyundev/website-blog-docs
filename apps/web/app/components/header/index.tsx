@@ -11,7 +11,7 @@ import {
   NavigationMenuTrigger,
 } from "@repo/design-system/components/ui/navigation-menu";
 import { env } from "@repo/env";
-import { Menu, MoveRight, X } from 'lucide-react';
+import { Menu, MoveRight, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -28,26 +28,35 @@ export const Header = () => {
     },
     {
       title: "Product",
-      description: "Managing a small business today is already tough.",
-      items: [
-        {
-          title: "Pricing",
-          href: "/pricing",
-        },
-        {
-          title: "Features",
-          href: "/features",
-        },
-        {
-          title: "Use Cases",
-          href: "/use-cases",
-        },
-        {
-          title: "Integrations",
-          href: "/integrations",
-        },
-      ],
+      href: "/#product",
+      description: "",
     },
+    // {
+    //   title: "Product",
+    //   description: "Managing a small business today is already tough.",
+    //   items: [
+    //     {
+    //       title: "Pricing",
+    //       href: "/pricing",
+    //     },
+    //     {
+    //       title: "Features",
+    //       href: "/features",
+    //     },
+    //     {
+    //       title: "Use Cases",
+    //       href: "/use-cases",
+    //     },
+    //     {
+    //       title: "Integrations",
+    //       href: "/integrations",
+    //     },
+    //     {
+    //       title: "Integrations",
+    //       href: "/integrations",
+    //     },
+    //   ],
+    // },
     {
       title: "Blog",
       href: "/blog",
@@ -58,6 +67,11 @@ export const Header = () => {
       href: env.NEXT_PUBLIC_DOCS_URL,
       description: "",
     },
+    {
+      title: "Contact",
+      href: "/contact",
+      description: "",
+    },
   ];
 
   const [isOpen, setOpen] = useState(false);
@@ -66,14 +80,8 @@ export const Header = () => {
     <header className="sticky top-0 left-0 z-40 w-full border-b bg-background">
       <div className="container relative mx-auto flex min-h-20 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Image
-            src={Logo}
-            alt="Logo"
-            width={24}
-            height={24}
-            className="dark:invert"
-          />
-          <p className="whitespace-nowrap font-semibold">datamizu</p>
+          <Image src={Logo} alt="Logo" width={36} height={24} className="" />
+          <p className="whitespace-nowrap text-lg font-semibold">Datamizu</p>
         </div>
 
         <NavigationMenu className="hidden lg:flex">
@@ -104,7 +112,7 @@ export const Header = () => {
                             <Link href="/contact">Book a call today</Link>
                           </Button>
                         </div>
-                        <div className="flex h-full flex-col justify-end text-sm">
+                        {/* <div className="flex h-full flex-col justify-end text-sm">
                           {item.items?.map((subItem) => (
                             <NavigationMenuLink
                               href={subItem.href}
@@ -115,7 +123,7 @@ export const Header = () => {
                               <MoveRight className="h-4 w-4 text-muted-foreground" />
                             </NavigationMenuLink>
                           ))}
-                        </div>
+                        </div> */}
                       </div>
                     </NavigationMenuContent>
                   </>
@@ -130,7 +138,11 @@ export const Header = () => {
             Join waitlist
           </Button>
           <ModeToggle />
-          <Button variant="ghost" className="lg:hidden" onClick={() => setOpen(!isOpen)}>
+          <Button
+            variant="ghost"
+            className="lg:hidden"
+            onClick={() => setOpen(!isOpen)}
+          >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
@@ -159,7 +171,7 @@ export const Header = () => {
                   ) : (
                     <p className="text-lg">{item.title}</p>
                   )}
-                  {item.items?.map((subItem) => (
+                  {/* {item.items?.map((subItem) => (
                     <Link
                       key={subItem.title}
                       href={subItem.href}
@@ -170,7 +182,7 @@ export const Header = () => {
                       </span>
                       <MoveRight className="h-4 w-4 stroke-1" />
                     </Link>
-                  ))}
+                  ))} */}
                 </div>
               </div>
             ))}

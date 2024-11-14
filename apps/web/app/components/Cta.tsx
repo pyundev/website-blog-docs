@@ -15,14 +15,12 @@ export default function CTASection() {
       <div className="absolute inset-0 bg-grid-slate-900/[0.04] bg-[size:40px_40px] [mask-image:radial-gradient(white,transparent_85%)]" />
       <div className="container relative mx-auto px-4 space-y-12 sm:space-y-16">
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="max-w-3xl text-center font-regular text-5xl tracking-tighter md:text-6xl bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-            Launching This December
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            Upgrade Your Data Infrastructure
           </h1>
-          <p className="max-w-3xl text-center text-lg mt-4 text-muted-foreground leading-relaxed tracking-tight md:text-xl">
-            We&apos;re putting in every effort to deliver the best data platform
-            on the market—one that empowers your team with seamless pipelines,
-            actionable insights, and powerful tools, all designed to transform
-            how you work with data.
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Join forward-thinking organizations leveraging our advanced notebook
+            platform to transform their data workflows.
           </p>
         </div>
 
