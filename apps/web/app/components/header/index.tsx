@@ -134,9 +134,11 @@ export const Header = () => {
         </NavigationMenu>
 
         <div className="flex items-center gap-4">
-          <Button variant="default" className="hidden lg:inline-flex">
-            Join waitlist
-          </Button>
+          <Link href="/">
+            <Button variant="default" className="hidden lg:inline-flex">
+              Join waitlist
+            </Button>
+          </Link>
           <ModeToggle />
           <Button
             variant="ghost"
@@ -187,9 +189,11 @@ export const Header = () => {
               </div>
             ))}
             <div className="px-4">
-              <Button variant="default" className="w-full">
-                Join waitlist
-              </Button>
+              <Link href="/">
+                <Button variant="default" className="w-full">
+                  Join waitlist
+                </Button>
+              </Link>
             </div>
           </div>
         )}
