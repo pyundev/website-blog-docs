@@ -68,8 +68,11 @@ export default function WaitlistForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="flex flex-col sm:flex-row gap-3 max-w-md">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full max-w-md space-y-4 px-4 sm:px-0"
+    >
+      <div className="flex flex-col gap-3 sm:flex-row">
         <Input
           type="email"
           placeholder="Enter your email"
@@ -77,16 +80,18 @@ export default function WaitlistForm() {
           onChange={(e) => setEmail(e.target.value)}
           required
           disabled={isSubmitting}
-          className="flex-1"
+          className="w-full min-w-0 h-12 text-lg"
+          autoComplete="email"
         />
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="whitespace-nowrap"
+          className="whitespace-nowrap w-full sm:w-auto h-12 text-lg px-8"
+          size="lg"
         >
           {isSubmitting ? (
             <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
               Joining...
             </>
           ) : (

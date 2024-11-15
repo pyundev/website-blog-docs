@@ -1,4 +1,3 @@
-// app/api/contacts/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import loops from "@/lib/loops";
 
@@ -6,7 +5,6 @@ export async function POST(request: NextRequest) {
   try {
     const { email } = await request.json();
 
-    // Validate email presence
     if (!email) {
       return NextResponse.json(
         { success: false, message: "Email is required" },
@@ -14,7 +12,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Basic email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -25,56 +22,44 @@ export async function POST(request: NextRequest) {
 
     try {
       const resp = await loops.createContact(email);
-
-      if (!resp.success) {
-        throw new Error(resp.message || "Failed to create contact");
-      }
-
+      
       return NextResponse.json(
         {
           success: true,
+          //@ts-ignore
           id: resp.id,
           message: "Successfully joined waitlist"
         },
         { status: 200 }
       );
     } catch (error: any) {
-      // Handle known Loops API errors
-      if (error.response?.status === 409) {
+      // Check for 409 in error.message since Loops might not use response object
+      if (error.message?.includes('409') || error.response?.status === 409) {
         return NextResponse.json(
           {
-            success: false,
-            message: "This email is already on the waitlist"
+            success: true, // Changed to true since user is effectively on waitlist
+            message: "You're already on our waitlist! We'll keep you updated."
           },
           { status: 409 }
         );
       }
 
-      // Log unexpected errors from Loops
       console.error("Loops API error:", error);
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Failed to add to waitlist. Please try again later."
-        },
-        { status: 500 }
-      );
+      throw error; // Let outer catch handle other errors
     }
 
   } catch (error) {
-    // Handle JSON parsing errors and other unexpected errors
     console.error("API route error:", error);
     return NextResponse.json(
       {
         success: false,
-        message: "Invalid request format"
+        message: "Failed to add to waitlist. Please try again later."
       },
-      { status: 400 }
+      { status: 500 }
     );
   }
 }
 
-// Add type safety with response type
 export type ContactResponse = {
   success: boolean;
   id?: string;
